@@ -2,9 +2,11 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SideBar from "./layout/SideBar";
-import Content from "./layout/Content";
+import dynamic from "next/dynamic";
 
 const queryClient = new QueryClient();
+
+const Content = dynamic(() => import("./layout/Content"), { ssr: false });
 
 interface Props {
   isHomePage?: boolean;

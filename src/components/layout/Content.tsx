@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Pagination, PaginationContent, PaginationLink } from "../ui";
 import { getData } from "@/lib/services";
@@ -8,6 +8,7 @@ import MovieCard from "../MovieCard";
 import Filters from "./Filters";
 import { getFavorites } from "@/lib/actions";
 import NotFound from "../NotFound";
+import dynamic from "next/dynamic";
 
 interface Props {
   isHomePage?: boolean;
