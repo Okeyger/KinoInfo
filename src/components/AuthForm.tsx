@@ -15,7 +15,9 @@ const AuthForm = () => {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    localStorage.setItem("api-key", JSON.stringify(apiKey));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("api-key", JSON.stringify(apiKey));
+    }
     router.push("/home");
   };
 
